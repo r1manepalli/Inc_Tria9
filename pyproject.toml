@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "inc_tria9"
+version = "0.3.1"
+description = "Dynatrace-style incident triage LangGraph skeleton with human review, FAISS vector DB, and OpenAI LLM + LangSmith observability."
+authors = ["Your Name <you@example.com>"]
+
+# Explicitly tell Poetry this is a src/ layout package
+packages = [
+    { include = "inc_tria9", from = "src" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+langgraph = "^0.2.0"
+pydantic = "^2.9.0"
+typing-extensions = "^4.12.0"
+rich = "^13.9.0"
+faiss-cpu = "^1.8.0"
+sentence-transformers = "^3.0.0"
+openai = "^1.54.0"
+langchain-core = "^0.3.0"
+langchain-openai = "^0.2.0"
+langsmith = "^0.2.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+black = "^24.0.0"
+mypy = "^1.11.0"
+
+[build-system]
+requires = ["poetry-core>=1.9.0"]
+build-backend = "poetry.core.masonry.api"

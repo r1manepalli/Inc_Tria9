@@ -1,0 +1,25 @@
+{
+  "incident": {
+    "id": "INC-PAYDB-2002",
+    "summary": "Payments DB CPU at 92% with elevated query latency",
+    "severity": "P1",
+    "source": "dynatrace",
+    "service": "payments-db",
+    "environment": "prod",
+    "tags": ["payments", "database", "postgres"],
+    "symptoms": {
+      "db_cpu_percent": 92.3,
+      "db_p95_query_ms": 850,
+      "primary_node": "payments-db-prod-primary-1"
+    },
+    "downstream_services": ["payments-service"],
+    "suspected_hot_queries": [
+      "SELECT * FROM payments.transactions WHERE created_at >= NOW() - interval '1 day';"
+    ],
+    "recent_events": {
+      "campaign": "holiday-discount-2024",
+      "traffic_increase_percent": 65
+    }
+  },
+  "next_node": "sre_reviewer"
+}

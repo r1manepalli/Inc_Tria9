@@ -1,0 +1,30 @@
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
+
+# Local environment variables
+.env
+.env.*
+
+# FAISS index & derived data
+data/runbooks/*.faiss
+data/runbooks/*.json
+
+# Checkpoints
+checkpoints/
+logs/
+
+# Jupyter, if added later
+.ipynb_checkpoints/
+
+# IDEs
+.idea/
+.vscode/
